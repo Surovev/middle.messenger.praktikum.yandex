@@ -1,18 +1,19 @@
 @font-face {
     font-family: 'inter';
-    src: url('__inter/Inter-Regular.woff2') format("woff2"),
-        url('__inter/Inter-Regular.woff') format("woff"),
-        url('__inter/Inter-Regular.ttf') format("TrueType");
+    src: url('/static/vendors/fonts/__inter/Inter-Regular.woff2') format("woff2"),
+        url('/static/vendors/fonts/__inter/Inter-Regular.woff') format("woff"),
+        url('/static/vendors/fonts/__inter/Inter-Regular.ttf') format("TrueType");
 
-    font-weight: normal;
+    font-weight:
+     normal;
 }
 
 
 @font-face {
     font-family: 'inter';
-    src: url('__inter/Inter-Bold.woff2') format("woff2"),
-        url('__inter/Inter-Bold.woff') format("woff"),
-        url('__inter/Inter-Bold.ttf') format("TrueType");
+    src: url('/static/vendors/fonts/__inter/Inter-Bold.woff2') format("woff2"),
+        url('/static/vendors/fonts/__inter/Inter-Bold.woff') format("woff"),
+        url('/static/vendors/fonts/__inter/Inter-Bold.ttf') format("TrueType");
 
     font-weight: bold;
 }
@@ -20,9 +21,9 @@
 
 @font-face {
     font-family: 'inter';
-    src: url('__inter/Inter-Black.woff2') format("woff2"),
-        url('__inter/Inter-Black.woff') format("woff"),
-        url('__inter/Inter-Black.ttf') format("TrueType");
+    src: url('/static/vendors/fonts/__inter/Inter-Black.woff2') format("woff2"),
+        url('/static/vendors/fonts/__inter/Inter-Black.woff') format("woff"),
+        url('/static/vendors/fonts/__inter/Inter-Black.ttf') format("TrueType");
 
     font-weight: 900;
 }
@@ -30,9 +31,9 @@
 
 @font-face {
     font-family: 'inter';
-    src: url('__inter/Inter-Medium.woff2') format("woff2"),
-        url('__inter/Inter-Medium.woff') format("woff"),
-        url('__inter/Inter-Medium.ttf') ("TrueType");
+    src: url('/static/vendors/fonts/__inter/Inter-Medium.woff2') format("woff2"),
+        url('/static/vendors/fonts/__inter/Inter-Medium.woff') format("woff"),
+        url('/static/vendors/fonts/__inter/Inter-Medium.ttf') ("TrueType");
 
     font-weight: 500;
 }

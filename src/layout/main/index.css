@@ -4,3 +4,18 @@
 @import url(../../pages/Login/login.css);
 @import url(../../pages/Error/error.css);
 @import url(../../pages/Profile/profile.css);
+
+body {
+    font-family: 'inter', sans-serif;
+}
+
+.demo-routing {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+}
+
+.demo-routing__link {
+    margin-bottom: 15px;
+    text-decoration: none;
+}

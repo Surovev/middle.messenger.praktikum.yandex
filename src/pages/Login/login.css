@@ -7,7 +7,6 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  font-family: 'inter', sans-serif;
 }
 .form {
   border: solid 2px #b5b5b5;
@@ -70,6 +69,7 @@
   border: solid 1px black;
   border-radius: 3px;
   transition: 0.3s;
+  width: 100%;
 }
 .btn:hover {
   opacity: 0.4;
