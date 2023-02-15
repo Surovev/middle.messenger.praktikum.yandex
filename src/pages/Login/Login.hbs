@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,27 +8,32 @@
     <link rel="stylesheet" href="../../layout/main/index.css">
     <title>Login</title>
 </head>
+
 <body>
-    <div class="login">
-        <form class="form login__form">
-            <div class="form__title">Вход</div>
-            <div class="form__row">
-              <div class="input">
-                  <span class="input__title">login</span>
-                  <input placeholder="some login" name="login" type="text" class="input__item">
-                  <span class="input__error-message">error</span>
-              </div>
-              <div class="input">
-                  <span class="input__title">Password</span>
-                  <input placeholder="some password" name="password" type="text" class="input__item">
-                  <span class="input__error-message"></span>
-            </div>
-            </div>
-            <div class="form__row">
-                <button type="submit" class="btn btn__filling">Войти</button>
-                <a rel="stylesheet" href="../Registration/Registration.hbs" class="form__link">Нет аккаунта?</a>
-            </div>
-        </form>
-    </div>
+    
+    <main>
+        <div class="login">
+            <form class="form login__form">
+                <h1 class="form__title">Вход</h1>
+                <div class="form__row">
+                    <div class="input">
+                        <h6 class="input__title">login</h6>
+                        <input placeholder="some login" name="login" type="text" class="input__item">
+                        <span class="input__error-message">error</span>
+                    </div>
+                    <div class="input">
+                        <h6 class="input__title">Password</h6>
+                        <input placeholder="some password" name="password" type="text" class="input__item">
+                        <span class="input__error-message"></span>
+                    </div>
+                </div>
+                <div class="form__row">
+                    <button type="submit" class="btn btn__filling">Войти</button>
+                    <a rel="stylesheet" href="../Registration/Registration.hbs" class="form__link">Нет аккаунта?</a>
+                </div>
+            </form>
+        </div>
+    </main>
 </body>
+
 </html>

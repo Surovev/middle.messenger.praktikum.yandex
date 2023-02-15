@@ -8,51 +8,53 @@
     <title>Login</title>
 </head>
 <body>
-  <div class="profile">
-      <div class="profile__wrap">
-        <div class="profile__avatar-wrapper">
-            <img class="profile__avatar" src="http://placekitten.com/100/100" alt="аватар">
-            <img class="profile__edit-avatar" src="../../../static/img/pencil.svg" alt="редактировать аватар">
+  <main>
+    <div class="profile">
+        <div class="profile__wrap">
+            <div class="profile__avatar-wrapper">
+                <img class="profile__avatar" src="http://placekitten.com/100/100" alt="аватар">
+                <img class="profile__edit-avatar" src="/static/img/pencil.svg" alt="редактировать аватар">
+            </div>
+            <div class="profile__title">Name</div>
+            <div class="profile__info">
+                <div class="profile__info-row">
+                    <p class="profile__info-name">Email</p>
+                    <p class="profile__info-value">Value</p>
+                </div>
+                <div class="profile__info-row">
+                    <p class="profile__info-name">Login</p>
+                    <p class="profile__info-value">Value</p>
+                </div>
+                <div class="profile__info-row">
+                    <p class="profile__info-name">First Name</p>
+                    <p class="profile__info-value">Value</p>
+                </div>
+                <div class="profile__info-row">
+                    <p class="profile__info-name">Last Name</p>
+                    <p class="profile__info-value">Value</p>
+                </div>
+                <div class="profile__info-row">
+                    <p class="profile__info-name">Nickname</p>
+                    <p class="profile__info-value">Value</p>
+                </div>
+                <div class="profile__info-row">
+                    <p class="profile__info-name">Phone number</p>
+                    <p class="profile__info-value">Value</p>
+                </div>
+            </div>
+            <div class="profile__links">
+                <div class="profile__link">
+                    <a href="../EditProfile/editProfile.hbs" class="profile__link-edit">Изменить данные</a>
+                </div>
+                <div class="profile__link">
+                    <a href="../EditPassword/editPassword.hbs" class="profile__link-edit">Изменить пароль</a>
+                </div>
+                <div class="profile__link">
+                    <a href="#" class="profile__link-exit">Выйти</a>
+                </div>
+            </div>
         </div>
-        <div class="profile__title">Name</div>
-        <div class="profile__info">
-            <div class="profile__info-row">
-                <div class="profile__info-name">Email</div>
-                <div class="profile__info-value">Value</div>
-            </div>
-            <div class="profile__info-row">
-                <div class="profile__info-name">Login</div>
-                <div class="profile__info-value">Value</div>
-            </div>
-            <div class="profile__info-row">
-                <div class="profile__info-name">First Name</div>
-                <div class="profile__info-value">Value</div>
-            </div>
-            <div class="profile__info-row">
-                <div class="profile__info-name">Last Name</div>
-                <div class="profile__info-value">Value</div>
-            </div>
-            <div class="profile__info-row">
-                <div class="profile__info-name">Nickname</div>
-                <div class="profile__info-value">Value</div>
-            </div>
-            <div class="profile__info-row">
-                <div class="profile__info-name">Phone number</div>
-                <div class="profile__info-value">Value</div>
-            </div>
-        </div>
-        <div class="profile__links">
-            <div class="profile__link">
-                <a href="../EditProfile/editProfile.hbs" class="profile__link-edit">Изменить данные</a>
-            </div>
-            <div class="profile__link">
-                <a href="../EditPassword/editPassword.hbs" class="profile__link-edit">Изменить пароль</a>
-            </div>
-            <div class="profile__link">
-                <a href="#" class="profile__link-exit">Выйти</a>
-            </div>
-        </div>
-      </div>
-  </div>
+    </div>
+  </main>
 </body>
 </html>

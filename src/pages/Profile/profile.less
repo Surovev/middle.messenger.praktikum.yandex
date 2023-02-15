@@ -8,7 +8,7 @@
     align-items: center;
     justify-content: space-around;
 
-    
+
     &__avatar-wrapper {
         margin: 20px 0 10px 0;
         width: 100px;
@@ -17,15 +17,15 @@
         flex-direction: column;
         align-items: center;
         position: relative;
-        
 
-        
+
+
         &:hover {
 
             & .profile__avatar {
                 opacity: .2;
             }
-            
+
 
             & .profile__edit-avatar {
                 z-index: 1;
@@ -39,49 +39,62 @@
         height: 100px;
         border-radius: 50px;
         margin-bottom: 10px;
-        
 
-      }
+
+    }
 
     &__edit-avatar {
-       width: 30px;
-       height: 30px;
-       position: absolute;
-       top: 30px;
-       left: 35px;
-       z-index: -1;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: 30px;
+        left: 35px;
+        z-index: -1;
     }
 
     &__title {
-        margin-bottom: 40px;
+        margin-bottom: 0 0 40px 0;
+        font-size: inherit;
     }
 
     &__wrap {
         display: flex;
         flex-direction: column;
         align-items: center;
-        background-color: rgb(245, 245, 245);
+        background-color: var(--white);
         width: 60%;
         max-width: 800px;
         padding: 0 15px;
         border-radius: 4px;
     }
 
-    &__info{
+    &__info {
         width: 100%;
         font-size: 14px;
 
+        &-value {
+            margin: 0;
+            font-size: inherit;
+            font-weight: inherit;
+        }
+
+        &-name {
+            margin: 0;
+            font-size: inherit;
+            font-weight: inherit;
+        }
+
     }
 
-    &__info-input{
+    &__info-input {
         outline: none;
         border: none;
         background-color: inherit;
         border-radius: 5px;
 
         &:focus-visible {
-           box-shadow: 4px 4px 14px 2px;
-           background-color: inherit;
+            box-shadow: 4px 4px 14px 2px;
+            background-color: inherit;
         }
     }
 
@@ -89,7 +102,7 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        border-bottom: solid 1px rgb(196, 196, 196);
+        border-bottom: solid 1px var(--light-grey);
         width: 100%;
         margin-bottom: 24px;
     }
@@ -106,7 +119,7 @@
 
     &__link {
         margin: 0 0 10px 0;
-        
+
 
         &-edit {
             text-decoration: none;
@@ -120,12 +133,11 @@
         &-exit {
             text-decoration: none;
             transition: .4s;
-            color: rgb(240, 35, 35);
+            color: var(--red);
+
             &:hover {
                 opacity: .4;
             }
         }
     }
-
-
 }

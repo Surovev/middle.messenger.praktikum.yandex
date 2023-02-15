@@ -16,6 +16,7 @@
 .error__number {
   font-size: 144px;
   font-weight: 900;
+  margin: 0;
 }
 .error__message {
   font-size: 24px;
