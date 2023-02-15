@@ -14,5 +14,5 @@
 - `npm run build` — сборка "стабильной" версии.
 
 
-Ссылка на деплой: https://surovev-messenger-25ua.onrender.com/
+
 
