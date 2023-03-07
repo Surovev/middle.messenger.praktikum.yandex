@@ -1,4 +1,5 @@
 
+import { Button } from '../../components/button/button';
 import { InputBlock } from '../../components/inputBlock/inputBlock.ts';
 import Block from '../../utils/Block.ts';
 import template from './LoginPage.hbs';
@@ -17,14 +18,20 @@ export class LoginPage extends Block {
       title: 'login',
       type: 'text',
       errorMessage: 'keks'
-    })
+    });
 
     this.children.passwordInput = new InputBlock({
       placeholder: 'some password',
       name: 'password',
       title: 'password',
       type: 'text'
-    })
+    });
+
+    this.children.submitButton = new Button({
+      className: 'btn__filling',
+      text: 'Войти',
+      type: 'submit'
+    });
 
   }
 

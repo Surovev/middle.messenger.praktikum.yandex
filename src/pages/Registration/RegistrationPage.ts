@@ -1,4 +1,6 @@
 import { InputBlock } from '../../components/inputBlock/inputBlock.ts';
+import { Button } from '../../components/button/button';
+
 import Block from '../../utils/Block.ts';
 import template from './RegistrationPage.hbs';
 
@@ -51,6 +53,12 @@ export class RegistrationPage extends Block {
       name: 'password',
       title: 'Password',
       type: 'password',
+    });
+
+    this.children.submitButton = new Button({
+      className: 'btn__filling',
+      text: 'Sing Up',
+      type: 'submit'
     });
 
   }

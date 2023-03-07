@@ -1,5 +1,6 @@
 
 import { RowInput } from '../../components/rowInput/rowInput.ts';
+import { Button } from '../../components/button/button';
 import Block from '../../utils/Block.ts';
 import template from './EditProfilePage.hbs';
 
@@ -56,6 +57,12 @@ export class EditProfilePage extends Block {
       title: 'Phone',
       type: 'text',
       errorMessage: 'kek'
+    });
+
+    this.children.submitButton = new Button({
+      className: 'btn__filling',
+      text: 'Save',
+      type: 'submit'
     });
 
   }
