@@ -1,4 +1,4 @@
-import Block from '../../utils/Block.ts';
+import Block from '../../utils/Block';
 import template from './button.hbs';
 
 interface buttonProps {
@@ -8,6 +8,7 @@ interface buttonProps {
 }
 
 export class Button extends Block {
+  text: string;
   constructor(props: buttonProps) {
     super('button', props);
   }
@@ -16,9 +17,7 @@ export class Button extends Block {
     this.text = this.props.text;
     this.element?.classList.add('btn');
     this.element?.classList.add(this.props.className);
-    this.element?.setAttribute("type", this.props.type);
-
-
+    this.element?.setAttribute('type', this.props.type);
   }
 
   render() {

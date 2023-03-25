@@ -1,12 +1,14 @@
-
-import { RowInput } from '../../components/rowInput/rowInput.ts';
+import { RowInput } from '../../components/rowInput/rowInput';
 import { Button } from '../../components/button/button';
-import Block from '../../utils/Block.ts';
+import Block from '../../utils/Block';
 import template from './EditProfilePage.hbs';
 
+interface EditProfilePageProps {
+  props: any;
+}
 
 export class EditProfilePage extends Block {
-  constructor(props) {
+  constructor(props: EditProfilePageProps) {
     super('main', props);
   }
 
@@ -16,7 +18,7 @@ export class EditProfilePage extends Block {
       name: 'email',
       title: 'Email',
       type: 'email',
-      errorMessage: 'kek'
+      errorMessage: 'kek',
     });
 
     this.children.inputLogin = new RowInput({
@@ -24,7 +26,7 @@ export class EditProfilePage extends Block {
       name: 'login',
       title: 'login',
       type: 'text',
-      errorMessage: 'kek'
+      errorMessage: 'kek',
     });
 
     this.children.inputFirstName = new RowInput({
@@ -32,7 +34,7 @@ export class EditProfilePage extends Block {
       name: 'first_name',
       title: 'First Name',
       type: 'text',
-      errorMessage: 'kek'
+      errorMessage: 'kek',
     });
 
     this.children.inputLastName = new RowInput({
@@ -40,7 +42,7 @@ export class EditProfilePage extends Block {
       name: 'second_name',
       title: 'Last Name',
       type: 'text',
-      errorMessage: 'kek'
+      errorMessage: 'kek',
     });
 
     this.children.inputNickName = new RowInput({
@@ -48,7 +50,7 @@ export class EditProfilePage extends Block {
       name: 'display_name',
       title: 'Nick Name',
       type: 'text',
-      errorMessage: 'kek'
+      errorMessage: 'kek',
     });
 
     this.children.inputPhone = new RowInput({
@@ -56,15 +58,14 @@ export class EditProfilePage extends Block {
       name: 'phone',
       title: 'Phone',
       type: 'text',
-      errorMessage: 'kek'
+      errorMessage: 'kek',
     });
 
     this.children.submitButton = new Button({
       className: 'btn__filling',
       text: 'Save',
-      type: 'submit'
+      type: 'submit',
     });
-
   }
 
   render() {

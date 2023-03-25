@@ -5,5 +5,3 @@ declare module "*.hbs" {
   
     export default template;
   }
-
-  declare module "*.ts"

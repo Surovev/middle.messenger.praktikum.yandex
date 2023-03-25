@@ -1,9 +1,9 @@
-
-import Block from '../../utils/Block.ts';
+import Block from '../../utils/Block';
 import template from './link.hbs';
 
 interface LinkProps {
   text: string;
+  events: any;
 }
 
 export class Link extends Block {
@@ -12,8 +12,8 @@ export class Link extends Block {
   }
 
   protected init(): void {
-      this.element?.classList.add('demo-routing__link');
-      this.element?.setAttribute('href', this.props.href)
+    this.element?.classList.add('demo-routing__link');
+    this.element?.setAttribute('href', this.props.href);
   }
 
   render() {

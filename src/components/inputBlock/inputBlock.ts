@@ -1,6 +1,5 @@
-
-import Block from '../../utils/Block.ts';
-import { Input } from '../input/input.ts';
+import Block from '../../utils/Block';
+import Input from '../input/input';
 import template from './inputBlock.hbs';
 
 interface InputBlockProps {
@@ -18,15 +17,20 @@ export class InputBlock extends Block {
   }
 
   protected init(): void {
-      this.element?.classList.add('input');
+    this.element?.classList.add('input');
 
-      this.children.input = new Input({
-        className: 'input__item',
-        name: this.props.name,
-        placeholder: this.props.placeholder,
-        type: this.props.type,
-        errorMessage: this.props.errorMessage
-      });
+    this.children.input = new Input({
+      className: 'input__item',
+      name: this.props.name,
+      placeholder: this.props.placeholder,
+      type: this.props.type,
+      errorMessage: this.props.errorMessage,
+      events: {
+        click: (event: Event) => {
+          console.log(event);
+        },
+      },
+    });
   }
 
   render() {

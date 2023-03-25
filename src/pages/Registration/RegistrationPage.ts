@@ -1,17 +1,19 @@
-import { InputBlock } from '../../components/inputBlock/inputBlock.ts';
+import { InputBlock } from '../../components/inputBlock/inputBlock';
 import { Button } from '../../components/button/button';
 
-import Block from '../../utils/Block.ts';
+import Block from '../../utils/Block';
 import template from './RegistrationPage.hbs';
 
+interface RegistrationPageProps {
+  props: any;
+}
 
 export class RegistrationPage extends Block {
-  constructor(props) {
+  constructor(props: RegistrationPageProps) {
     super('main', props);
   }
 
   protected init(): void {
-
     this.children.emailInput = new InputBlock({
       placeholder: 'email',
       name: 'email',
@@ -24,7 +26,7 @@ export class RegistrationPage extends Block {
       name: 'login',
       title: 'login',
       type: 'text',
-      errorMessage: 'kek'
+      errorMessage: 'kek',
     });
 
     this.children.firstNameInput = new InputBlock({
@@ -47,7 +49,7 @@ export class RegistrationPage extends Block {
       title: 'Phone',
       type: 'text',
     });
-    
+
     this.children.passwordInput = new InputBlock({
       placeholder: 'your password',
       name: 'password',
@@ -58,9 +60,8 @@ export class RegistrationPage extends Block {
     this.children.submitButton = new Button({
       className: 'btn__filling',
       text: 'Sing Up',
-      type: 'submit'
+      type: 'submit',
     });
-
   }
 
   render() {
