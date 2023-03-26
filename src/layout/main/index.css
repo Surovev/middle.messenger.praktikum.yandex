@@ -15,12 +15,22 @@
 body {
   font-family: 'inter', sans-serif;
 }
+
 .demo-routing {
   display: flex;
   flex-direction: column;
   padding-left: 20px;
 }
+
 .demo-routing__link {
   margin-bottom: 15px;
   text-decoration: none;
+}
+
+.form-wrap {
+  display: inherit;
+  flex-direction: inherit;
+  width: 100%;
+  align-items: inherit;
+  max-width: inherit;
 }

@@ -8,7 +8,7 @@ export class HomePage extends Block {
     super('div', {});
   }
 
-  init() {
+  protected init() {
     this.children.link1 = new Link({
       text: '1. Error`s',
       events: {

@@ -7,9 +7,30 @@ interface EditProfilePageProps {
   props: any;
 }
 
+interface HandleNameChangeInterface {
+  target: HTMLInputElement;
+}
+
 export class EditProfilePage extends Block {
-  constructor(props: EditProfilePageProps) {
+  form: Element | null;
+
+  constructor(props: EditProfilePageProps | any) {
     super('main', props);
+    const form = this.element!.querySelector('.profile__wrap');
+    this.form = form;
+    this.form?.addEventListener('submit', (e: Event) => {
+      e.preventDefault();
+      const data = this.form ? new FormData(this.form) : null;
+      const entries = data!.entries();
+      const result = {};
+      // eslint-disable-next-line no-restricted-syntax
+      for (const entry of entries) {
+        const key = entry[0];
+        const val = entry[1];
+        result[key] = val;
+      }
+      console.log(result);
+    });
   }
 
   protected init(): void {
@@ -18,7 +39,23 @@ export class EditProfilePage extends Block {
       name: 'email',
       title: 'Email',
       type: 'email',
-      errorMessage: 'kek',
+      errorMessage: '',
+      events: {
+        blur: (event: HandleNameChangeInterface) => {
+          console.log(event.target.validity.valid);
+          if (!event.target.validity.valid) {
+            this.children.inputEmail?.setProps({ errorMessage: 'error' });
+          } else {
+            this.children.inputEmail?.setProps({ errorMessage: null });
+          }
+        },
+        focus: (event: HandleNameChangeInterface) => {
+          console.log(event.target.validity.valid);
+          if (!event.target.validity.valid) {
+            this.children.inputEmail?.setProps({ errorMessage: 'error' });
+          }
+        },
+      },
     });
 
     this.children.inputLogin = new RowInput({
@@ -65,6 +102,13 @@ export class EditProfilePage extends Block {
       className: 'btn__filling',
       text: 'Save',
       type: 'submit',
+      events: {
+        submit: (event: Event) => {
+          event.preventDefault();
+
+          console.log(this.form);
+        },
+      },
     });
   }
 

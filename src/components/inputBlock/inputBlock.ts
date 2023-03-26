@@ -8,7 +8,9 @@ interface InputBlockProps {
   type: string;
   name: string;
   errorMessage?: string;
+  events?: any;
 }
+
 
 export class InputBlock extends Block {
   constructor(props: InputBlockProps) {
@@ -25,11 +27,8 @@ export class InputBlock extends Block {
       placeholder: this.props.placeholder,
       type: this.props.type,
       errorMessage: this.props.errorMessage,
-      events: {
-        click: (event: Event) => {
-          console.log(event);
-        },
-      },
+      events: this.props.events,
+
     });
   }
 

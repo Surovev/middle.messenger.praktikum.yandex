@@ -11,7 +11,7 @@ export class Link extends Block {
     super('p', props);
   }
 
-  protected init(): void {
+  init(): void {
     this.element?.classList.add('demo-routing__link');
     this.element?.setAttribute('href', this.props.href);
   }

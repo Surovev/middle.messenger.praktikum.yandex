@@ -8,6 +8,7 @@ interface RowInputProps {
   type: string;
   name: string;
   errorMessage?: string;
+  events?: any;
 }
 
 export class RowInput extends Block {
@@ -26,6 +27,7 @@ export class RowInput extends Block {
       placeholder: this.props.placeholder,
       type: this.props.type,
       errorMessage: this.props.errorMessage,
+      events: this.props.events,
     });
   }
 

@@ -5,6 +5,7 @@ interface buttonProps {
   className: string;
   type: string;
   text: string;
+  events: any;
 }
 
 export class Button extends Block {
