@@ -1,3 +1,4 @@
+import { HandleNameChangeInterface } from '../../pages/Login/LoginPage';
 import Block from '../../utils/Block';
 import Input from '../input/input';
 import template from './inputBlock.hbs';
@@ -8,14 +9,13 @@ interface InputBlockProps {
   type: string;
   name: string;
   errorMessage?: string;
-  events?: any;
+  events?: { focusout: (event: HandleNameChangeInterface) => void;
+    focusin: (event: HandleNameChangeInterface) => void; };
 }
-
 
 export class InputBlock extends Block {
   constructor(props: InputBlockProps) {
     super('div', props);
-    console.log(template);
   }
 
   protected init(): void {
@@ -26,9 +26,6 @@ export class InputBlock extends Block {
       name: this.props.name,
       placeholder: this.props.placeholder,
       type: this.props.type,
-      errorMessage: this.props.errorMessage,
-      events: this.props.events,
-
     });
   }
 

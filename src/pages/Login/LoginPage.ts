@@ -1,19 +1,29 @@
 import { Button } from '../../components/button/button';
 import { InputBlock } from '../../components/inputBlock/inputBlock';
+import { inputNames } from '../../typings/types';
 import Block from '../../utils/Block';
+import validator from '../../utils/Validate';
 import template from './LoginPage.hbs';
 
 interface LoginPageProps {
   props: any;
 }
 
-interface HandleNameChangeInterface {
+export interface HandleNameChangeInterface {
   target: HTMLInputElement;
 }
 
 export class LoginPage extends Block {
+  form: Element | null;
+
   constructor(props: LoginPageProps) {
     super('main', props);
+    const form = this.element!.querySelector('.login__form');
+    this.form = form;
+    this.form?.addEventListener('submit', (e: Event) => {
+      e.preventDefault();
+      validator.validateSubmit(e);
+    });
   }
 
   protected init(): void {
@@ -22,7 +32,14 @@ export class LoginPage extends Block {
       name: 'login',
       title: 'login',
       type: 'text',
-      errorMessage: 'keks',
+      events: {
+        focusin: (event: HandleNameChangeInterface) => {
+          validator.validateField(event.target as HTMLInputElement);
+        },
+        focusout: (event: HandleNameChangeInterface) => {
+          validator.validateField(event.target as HTMLInputElement);
+        },
+      },
 
     });
 
@@ -32,16 +49,13 @@ export class LoginPage extends Block {
       title: 'password',
       type: 'text',
       events: {
-        blur: (event: HandleNameChangeInterface) => {
-          console.log(this.children.passwordInput);
-
-          this.children.passwordInput?.setProps({ errorMessage: 's' });
-        },
         focusin: (event: HandleNameChangeInterface) => {
-          this.children.passwordInput?.setProps({ errorMessage: 'error' });
-          console.log(this.children.passwordInput);
-
+          validator.validateField(event.target as HTMLInputElement);
         },
+        focusout: (event: HandleNameChangeInterface) => {
+          validator.validateField(event.target as HTMLInputElement);
+        },
+
       },
     });
 
@@ -55,7 +69,7 @@ export class LoginPage extends Block {
 
           console.log(event);
         },
-      }
+      },
     });
   }
 

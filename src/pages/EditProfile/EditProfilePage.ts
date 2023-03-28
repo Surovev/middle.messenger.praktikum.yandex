@@ -2,6 +2,8 @@ import { RowInput } from '../../components/rowInput/rowInput';
 import { Button } from '../../components/button/button';
 import Block from '../../utils/Block';
 import template from './EditProfilePage.hbs';
+import validator from '../../utils/Validate';
+import { inputNames } from '../../typings/types';
 
 interface EditProfilePageProps {
   props: any;
@@ -20,16 +22,7 @@ export class EditProfilePage extends Block {
     this.form = form;
     this.form?.addEventListener('submit', (e: Event) => {
       e.preventDefault();
-      const data = this.form ? new FormData(this.form) : null;
-      const entries = data!.entries();
-      const result = {};
-      // eslint-disable-next-line no-restricted-syntax
-      for (const entry of entries) {
-        const key = entry[0];
-        const val = entry[1];
-        result[key] = val;
-      }
-      console.log(result);
+      validator.validateSubmit(e);
     });
   }
 
@@ -39,22 +32,14 @@ export class EditProfilePage extends Block {
       name: 'email',
       title: 'Email',
       type: 'email',
-      errorMessage: '',
       events: {
-        blur: (event: HandleNameChangeInterface) => {
-          console.log(event.target.validity.valid);
-          if (!event.target.validity.valid) {
-            this.children.inputEmail?.setProps({ errorMessage: 'error' });
-          } else {
-            this.children.inputEmail?.setProps({ errorMessage: null });
-          }
+        focusin: (event: HandleNameChangeInterface) => {
+          validator.validateField(event.target as HTMLInputElement);
         },
-        focus: (event: HandleNameChangeInterface) => {
-          console.log(event.target.validity.valid);
-          if (!event.target.validity.valid) {
-            this.children.inputEmail?.setProps({ errorMessage: 'error' });
-          }
+        focusout: (event: HandleNameChangeInterface) => {
+          validator.validateField(event.target as HTMLInputElement);
         },
+
       },
     });
 
@@ -63,7 +48,15 @@ export class EditProfilePage extends Block {
       name: 'login',
       title: 'login',
       type: 'text',
-      errorMessage: 'kek',
+      events: {
+        focusin: (event: HandleNameChangeInterface) => {
+          validator.validateField(event.target as HTMLInputElement);
+        },
+        focusout: (event: HandleNameChangeInterface) => {
+          validator.validateField(event.target as HTMLInputElement);
+        },
+
+      },
     });
 
     this.children.inputFirstName = new RowInput({
@@ -71,7 +64,15 @@ export class EditProfilePage extends Block {
       name: 'first_name',
       title: 'First Name',
       type: 'text',
-      errorMessage: 'kek',
+      events: {
+        focusin: (event: HandleNameChangeInterface) => {
+          validator.validateField(event.target as HTMLInputElement);
+        },
+        focusout: (event: HandleNameChangeInterface) => {
+          validator.validateField(event.target as HTMLInputElement);
+        },
+
+      },
     });
 
     this.children.inputLastName = new RowInput({
@@ -79,7 +80,15 @@ export class EditProfilePage extends Block {
       name: 'second_name',
       title: 'Last Name',
       type: 'text',
-      errorMessage: 'kek',
+      events: {
+        focusin: (event: HandleNameChangeInterface) => {
+          validator.validateField(event.target as HTMLInputElement);
+        },
+        focusout: (event: HandleNameChangeInterface) => {
+          validator.validateField(event.target as HTMLInputElement);
+        },
+
+      },
     });
 
     this.children.inputNickName = new RowInput({
@@ -87,7 +96,15 @@ export class EditProfilePage extends Block {
       name: 'display_name',
       title: 'Nick Name',
       type: 'text',
-      errorMessage: 'kek',
+      events: {
+        focusin: (event: HandleNameChangeInterface) => {
+          validator.validateField(event.target as HTMLInputElement);
+        },
+        focusout: (event: HandleNameChangeInterface) => {
+          validator.validateField(event.target as HTMLInputElement);
+        },
+
+      },
     });
 
     this.children.inputPhone = new RowInput({
@@ -95,7 +112,15 @@ export class EditProfilePage extends Block {
       name: 'phone',
       title: 'Phone',
       type: 'text',
-      errorMessage: 'kek',
+      events: {
+        focusin: (event: HandleNameChangeInterface) => {
+          validator.validateField(event.target as HTMLInputElement);
+        },
+        focusout: (event: HandleNameChangeInterface) => {
+          validator.validateField(event.target as HTMLInputElement);
+        },
+
+      },
     });
 
     this.children.submitButton = new Button({

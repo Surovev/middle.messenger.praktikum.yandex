@@ -88,6 +88,17 @@
   flex-grow: 1;
   padding: 0 20px 20px 20px;
 }
+.message-list__message {
+  width: 100%;
+  min-height: 40px;
+  padding: 10px;
+  border-radius: 5px;
+}
+.message-list__message_is-your {
+  text-align: end;
+  background-color: var(--light-grey);
+  color: var(--red);
+}
 .message-list.is-empty {
   display: flex;
   flex-grow: 1;

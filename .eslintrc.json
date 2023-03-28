@@ -18,7 +18,7 @@
         }
     },
     "rules": {
-        "max-len": [2, 110],
+        "max-len": [2, 130],
         "import/prefer-default-export": "off",
         "import/no-extraneous-dependencies": "off",
         "func-names": "off",

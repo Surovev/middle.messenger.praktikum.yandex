@@ -7,14 +7,12 @@ interface InputProps {
   placeholder: string;
   type: string;
   name: string;
-  errorMessage?: string;
   events?: any;
 }
 
 export default class Input extends Block {
   constructor(props: InputProps) {
     super('input', props);
-    console.log(template);
   }
 
   protected init(): void {

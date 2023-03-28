@@ -105,6 +105,19 @@
     flex-direction: column;
     flex-grow: 1;
     padding: 0 20px 20px 20px;
+
+    &__message {
+        width: 100%;
+        min-height: 40px;
+        padding: 10px;
+        border-radius: 5px;
+
+        &_is-your {
+            text-align: end;
+            background-color: var(--light-grey);
+            color: var(--red);
+        }
+    }
   
     &.is-empty {
         display: flex;

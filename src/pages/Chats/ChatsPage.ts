@@ -6,14 +6,18 @@ props: any;
 }
 
 export class ChatsPage extends Block {
+  form: Element | null;
+
   constructor(props: ChatsPageProps) {
     super('main', props);
-  }
+    const form = this.element!.querySelector('.input-area');
+    const messageInput = form?.querySelector('#message');
 
-  //   protected init(): void {
-  //       this.element?.classList.add('demo-routing__link');
-  //       this.element?.setAttribute('href', this.props.href)
-  //   }
+    form!.addEventListener('submit', (e: Event) => {
+      e.preventDefault();
+      console.log({ message: (messageInput as HTMLTextAreaElement).value });
+    });
+  }
 
   render() {
     return this.compile(template, this.props);

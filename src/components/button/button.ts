@@ -10,6 +10,8 @@ interface buttonProps {
 
 export class Button extends Block {
   text: string;
+  className: string;
+  type: string;
   constructor(props: buttonProps) {
     super('button', props);
   }
