@@ -17,6 +17,7 @@
             }
         }
     },
+    "ignorePatterns": [".less"],
     "rules": {
         "max-len": [2, 130],
         "import/prefer-default-export": "off",
