@@ -1,20 +1,10 @@
-import { HandleNameChangeInterface } from '../../pages/Login/LoginPage';
+import { BlockProps } from '../../typings/types';
 import Block from '../../utils/Block';
 import Input from '../input/input';
 import template from './inputBlock.hbs';
 
-interface InputBlockProps {
-  title: string;
-  placeholder: string;
-  type: string;
-  name: string;
-  errorMessage?: string;
-  events?: { focusout: (event: HandleNameChangeInterface) => void;
-    focusin: (event: HandleNameChangeInterface) => void; };
-}
-
 export class InputBlock extends Block {
-  constructor(props: InputBlockProps) {
+  constructor(props: BlockProps) {
     super('div', props);
   }
 

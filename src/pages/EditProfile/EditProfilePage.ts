@@ -1,16 +1,10 @@
-import { RowInput } from '../../components/rowInput/rowInput';
-import { Button } from '../../components/button/button';
 import Block from '../../utils/Block';
 import template from './EditProfilePage.hbs';
 import validator from '../../utils/Validate';
-import { inputNames } from '../../typings/types';
+import { EditProfileForm } from './EditProfileForm';
 
 interface EditProfilePageProps {
   props: any;
-}
-
-interface HandleNameChangeInterface {
-  target: HTMLInputElement;
 }
 
 export class EditProfilePage extends Block {
@@ -18,120 +12,20 @@ export class EditProfilePage extends Block {
 
   constructor(props: EditProfilePageProps | any) {
     super('main', props);
-    const form = this.element!.querySelector('.profile__wrap');
-    this.form = form;
-    this.form?.addEventListener('submit', (e: Event) => {
-      e.preventDefault();
-      validator.validateSubmit(e);
-    });
+    // const form = this.element!.querySelector('.profile__wrap');
+    // this.form = form;
+    // this.form?.addEventListener('submit', (e: Event) => {
+    //   e.preventDefault();
+    //   validator.validateSubmit(e);
+    // });
   }
 
   protected init(): void {
-    this.children.inputEmail = new RowInput({
-      placeholder: 'email',
-      name: 'email',
-      title: 'Email',
-      type: 'email',
-      events: {
-        focusin: (event: HandleNameChangeInterface) => {
-          validator.validateField(event.target as HTMLInputElement);
-        },
-        focusout: (event: HandleNameChangeInterface) => {
-          validator.validateField(event.target as HTMLInputElement);
-        },
-
-      },
-    });
-
-    this.children.inputLogin = new RowInput({
-      placeholder: 'some login',
-      name: 'login',
-      title: 'login',
-      type: 'text',
-      events: {
-        focusin: (event: HandleNameChangeInterface) => {
-          validator.validateField(event.target as HTMLInputElement);
-        },
-        focusout: (event: HandleNameChangeInterface) => {
-          validator.validateField(event.target as HTMLInputElement);
-        },
-
-      },
-    });
-
-    this.children.inputFirstName = new RowInput({
-      placeholder: 'first name',
-      name: 'first_name',
-      title: 'First Name',
-      type: 'text',
-      events: {
-        focusin: (event: HandleNameChangeInterface) => {
-          validator.validateField(event.target as HTMLInputElement);
-        },
-        focusout: (event: HandleNameChangeInterface) => {
-          validator.validateField(event.target as HTMLInputElement);
-        },
-
-      },
-    });
-
-    this.children.inputLastName = new RowInput({
-      placeholder: 'last name',
-      name: 'second_name',
-      title: 'Last Name',
-      type: 'text',
-      events: {
-        focusin: (event: HandleNameChangeInterface) => {
-          validator.validateField(event.target as HTMLInputElement);
-        },
-        focusout: (event: HandleNameChangeInterface) => {
-          validator.validateField(event.target as HTMLInputElement);
-        },
-
-      },
-    });
-
-    this.children.inputNickName = new RowInput({
-      placeholder: 'nick name',
-      name: 'display_name',
-      title: 'Nick Name',
-      type: 'text',
-      events: {
-        focusin: (event: HandleNameChangeInterface) => {
-          validator.validateField(event.target as HTMLInputElement);
-        },
-        focusout: (event: HandleNameChangeInterface) => {
-          validator.validateField(event.target as HTMLInputElement);
-        },
-
-      },
-    });
-
-    this.children.inputPhone = new RowInput({
-      placeholder: 'phone',
-      name: 'phone',
-      title: 'Phone',
-      type: 'text',
-      events: {
-        focusin: (event: HandleNameChangeInterface) => {
-          validator.validateField(event.target as HTMLInputElement);
-        },
-        focusout: (event: HandleNameChangeInterface) => {
-          validator.validateField(event.target as HTMLInputElement);
-        },
-
-      },
-    });
-
-    this.children.submitButton = new Button({
-      className: 'btn__filling',
-      text: 'Save',
-      type: 'submit',
+    this.children.form = new EditProfileForm({
       events: {
         submit: (event: Event) => {
           event.preventDefault();
-
-          console.log(this.form);
+          validator.validateSubmit(event);
         },
       },
     });

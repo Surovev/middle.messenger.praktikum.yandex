@@ -2,13 +2,10 @@ import Block from '../../utils/Block';
 import { Link } from '../../components/link/link';
 import template from './ErrorPage.hbs';
 import { renderDOM } from '../../utils/routerDOM';
-
-interface ErrorPageProps {
-  props: any;
-}
+import { BlockProps } from '../../typings/types';
 
 export class ErrorPage extends Block {
-  constructor(props: ErrorPageProps) {
+  constructor(props: BlockProps) {
     super('div', props);
   }
 

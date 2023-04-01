@@ -1,20 +1,10 @@
 import Block from '../../utils/Block';
 import template from './rowInput.hbs';
 import Input from '../input/input';
-
-interface RowInputProps {
-  title: string;
-  placeholder: string;
-  type: string;
-  name: string;
-  errorMessage?: string;
-  events?: any;
-}
+import { BlockProps } from '../../typings/types';
 
 export class RowInput extends Block {
-  props: RowInputProps;
-
-  constructor(props: RowInputProps) {
+  constructor(props: BlockProps) {
     super('div', props);
   }
 
@@ -26,7 +16,6 @@ export class RowInput extends Block {
       name: this.props.name,
       placeholder: this.props.placeholder,
       type: this.props.type,
-      errorMessage: this.props.errorMessage,
       events: this.props.events,
     });
   }

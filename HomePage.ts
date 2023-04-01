@@ -2,6 +2,7 @@ import Block from './src/utils/Block';
 import { Link } from './src/components/link/link';
 import template from './HomePage.hbs';
 import { renderDOM } from './src/utils/routerDOM';
+import validator from './src/utils/Validate';
 
 export class HomePage extends Block {
   constructor() {

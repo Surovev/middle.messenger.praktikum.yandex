@@ -38,3 +38,17 @@ export interface Options {
   headers?: {[key: string]: string}
   data?: unknown;
 }
+
+export interface HandleNameChangeInterface {
+  target: HTMLInputElement;
+}
+
+export interface BlockEvents {
+  [event: string]: (e: Event) => void;
+}
+
+export type BlockProps = {
+  events?: BlockEvents
+} & {
+  [key: string]: unknown
+}

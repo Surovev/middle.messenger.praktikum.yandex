@@ -1,21 +1,23 @@
+import { BlockProps } from '../../typings/types';
 import Block from '../../utils/Block';
+import { ChatsForm } from './ChatsForm';
 import template from './ChatsPage.hbs';
 
-interface ChatsPageProps {
-props: any;
-}
-
 export class ChatsPage extends Block {
-  form: Element | null;
-
-  constructor(props: ChatsPageProps) {
+  constructor(props: BlockProps) {
     super('main', props);
-    const form = this.element!.querySelector('.input-area');
-    const messageInput = form?.querySelector('#message');
+  }
 
-    form!.addEventListener('submit', (e: Event) => {
-      e.preventDefault();
-      console.log({ message: (messageInput as HTMLTextAreaElement).value });
+  protected init(): void {
+    this.children.form = new ChatsForm({
+      events: {
+        submit: (event: Event) => {
+          event.preventDefault();
+          const formData = new FormData(event.target as HTMLFormElement);
+          const formProps = Object.fromEntries(formData);
+          console.log(formProps);
+        },
+      },
     });
   }
 
