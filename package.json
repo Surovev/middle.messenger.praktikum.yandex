@@ -21,7 +21,7 @@
   },
   "scripts": {
     "dev": "parcel ./index.html --no-cache -p 3000",
-    "start": "parcel build ./index.html && node server --no-cache",
+    "start": "parcel ./index.html --open --port 3000",
     "build": "parcel build ./index.hbs --no-cache",
     "lint": "npx eslint . --ext .ts ",
     "lint-style": "npx stylelint \"**/*.less\" --fix",
