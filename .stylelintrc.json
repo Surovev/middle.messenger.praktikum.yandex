@@ -1,17 +1,1 @@
-{
-  "extends": "stylelint-config-standard-scss",
-  "rules": {
-      "color-hex-case": "upper",
-      "indentation": 4,
-      "rule-empty-line-before": "never-multi-line",
-      "string-quotes": "double",
-      "selector-class-pattern": null,
-      "length-zero-no-unit": null,
-      "alpha-value-notation": "number"
-  },
-  "ignoreFiles": [
-      "build/*",
-      "dist/*",
-      ".parcel-cache/*"
-  ]
-}
+{ "extends": ["stylelint-config-standard"] }

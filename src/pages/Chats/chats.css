@@ -20,7 +20,7 @@
 .chats-feed__search {
   height: 26px;
   width: 100%;
-  margin: 10px 0 20px 0;
+  margin: 10px 0 20px;
 }
 .chats-feed__search input {
   width: 100%;
@@ -36,7 +36,7 @@
   display: flex;
   align-items: center;
   margin-bottom: 10px;
-  padding: 10px 0 0 0;
+  padding: 10px 0 0;
   border-top: solid 1px;
   width: 100%;
 }
@@ -59,7 +59,7 @@
   font-size: 16px;
 }
 .chat-card__message {
-  margin: 4px 0 0 0;
+  margin: 4px 0 0;
   overflow: hidden;
   height: 60px;
 }
@@ -69,11 +69,11 @@
   align-items: center;
 }
 .chat-card__info-time {
-  margin: 0 0 23px 0;
+  margin: 0 0 23px;
   font-size: 14px;
 }
 .chat-card__info-unread {
-  margin: 0 0 23px 0;
+  margin: 0 0 23px;
   color: white;
   background-color: blue;
   font-size: 16px;
@@ -86,7 +86,7 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  padding: 0 20px 20px 20px;
+  padding: 0 20px 20px;
 }
 .message-list__message {
   width: 100%;
@@ -144,7 +144,7 @@
   align-items: center;
   width: 100%;
   border-top: solid 1px var(--light-grey);
-  padding: 14px 0 0 0;
+  padding: 14px 0 0;
 }
 .input-area__file {
   margin: 0 10px 0 0;
