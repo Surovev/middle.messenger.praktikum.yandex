@@ -1,30 +1,40 @@
-@import url(../../../static/vendors/normalize.css);
-@import url(../../../static/vendors/fonts/fonts.css);
-
-@import url(../../pages/Login/login.css);
-@import url(../../pages/Error/error.css);
-@import url(../../pages/Profile/profile.css);
-@import url(../../components/popup/popup.css);
+@import url('../../../static/vendors/normalize.less');
+@import url('../../pages/Login/login.less');
+@import url('../../pages/Error/error.less');
+@import url('../../pages/Profile/profile.less');
+@import url('../../components/popup/popup.less');
+@import url('../../pages/Chats/chats.less');
+@import url('../../components/button/button.less');
+@import url('../../components/input/input.less');
+@import url('../../components/form/form.less');
 
 :root {
-    --white: rgb(255, 255, 255);
-    --black: rgb(0, 0, 0);
-    --red: rgb(255, 40, 40);
-    --light-grey: rgb(181, 181, 181);
-    --light-blue: rgb(59, 234, 243);
+    --white: rgb(255 255 255);
+    --black: rgb(0 0 0);
+    --red: rgb(255 40 40);
+    --light-grey: rgb(181 181 181);
+    --light-blue: rgb(59 234 243);
 }
 
 body {
-    font-family: 'inter', sans-serif;
+    font-family: inter, sans-serif;
 }
 
 .demo-routing {
     display: flex;
     flex-direction: column;
     padding-left: 20px;
+
+    &__link {
+        margin-bottom: 15px;
+        text-decoration: none;
+    }
 }
 
-.demo-routing__link {
-    margin-bottom: 15px;
-    text-decoration: none;
+.form-wrap {
+    display: inherit;
+    flex-direction: inherit;
+    width: 100%;
+    align-items: inherit;
+    max-width: inherit;
 }

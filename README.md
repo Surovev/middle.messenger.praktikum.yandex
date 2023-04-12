@@ -8,4 +8,6 @@
 - `npm run dev` — запуск версии для разработчика,
 - `npm run build` — сборка "стабильной" версии.
 
+
 Ссылка на деплой: https://6422f2423ab4dc0008cff25e--iridescent-brigadeiros-98c840.netlify.app/ 
+

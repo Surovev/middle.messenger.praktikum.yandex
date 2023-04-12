@@ -1,0 +1,35 @@
+.input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  width: 100%;
+
+  &__title {
+    font-size: 13px;
+    margin: 0;
+    font-weight: inherit;
+  }
+
+  &__item {
+    font-size: 13px;
+    height: 24px;
+    width: 100%;
+    border: none;
+    border-bottom: solid 1px var(--light-grey);
+
+    &:focus-visible {
+      border-bottom: solid 2px var(--light-blue);
+      outline: none;
+    }
+  }
+
+  &__error-message {
+    height: 13px;
+    left: 0;
+    bottom: -13px;
+    color: var(--red);
+    font-size: 13px;
+    container-type: inline-size;
+    overflow: hidden;
+  }
+}

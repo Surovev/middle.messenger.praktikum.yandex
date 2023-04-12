@@ -3,36 +3,11 @@
     left: 0;
     right: 0;
     top: 0;
+    /* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
     bottom: 0;
     display: flex;
     align-items: center;
     justify-content: space-around;
-
-
-    &__avatar-wrapper {
-        margin: 20px 0 10px 0;
-        width: 100px;
-        height: 100px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        position: relative;
-
-
-
-        &:hover {
-
-            & .profile__avatar {
-                opacity: .2;
-            }
-
-
-            & .profile__edit-avatar {
-                z-index: 1;
-            }
-        }
-
-    }
 
     &__avatar {
         width: 100px;
@@ -50,6 +25,32 @@
         top: 30px;
         left: 35px;
         z-index: -1;
+    }
+
+
+    &__avatar-wrapper {
+        margin: 20px 0 10px;
+        width: 100px;
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+
+
+
+        &:hover {
+            & .profile {
+                &__avatar {
+                opacity: .2;
+             }
+
+             &__edit-avatar {
+                z-index: 1;
+             }
+            }
+        }
+
     }
 
     &__title {
@@ -84,6 +85,14 @@
             font-weight: inherit;
         }
 
+        &-error {
+            position: absolute;
+            top: 20px;
+            right: 0;
+            color: var(--red);
+
+        }
+
     }
 
     &__info-input {
@@ -105,6 +114,8 @@
         border-bottom: solid 1px var(--light-grey);
         width: 100%;
         margin-bottom: 24px;
+        position: relative;
+
     }
 
     &__links {
@@ -118,7 +129,7 @@
     }
 
     &__link {
-        margin: 0 0 10px 0;
+        margin: 0 0 10px;
 
 
         &-edit {
