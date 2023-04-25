@@ -1,8 +1,8 @@
 import Block from '../../utils/Block';
 import { Link } from '../../components/link/link';
 import template from './ErrorPage.hbs';
-import { renderDOM } from '../../utils/routerDOM';
 import { BlockProps } from '../../typings/types';
+import router from '../../utils/router/router';
 
 export class ErrorPage extends Block {
   constructor(props: BlockProps) {
@@ -14,7 +14,7 @@ export class ErrorPage extends Block {
       text: 'Назад к чатам',
       events: {
         click: () => {
-          renderDOM('home');
+          router.go('/messenger');
         },
       },
     });
@@ -23,4 +23,9 @@ export class ErrorPage extends Block {
   render() {
     return this.compile(template, this.props);
   }
+}
+
+export default function createErrorPage(): Block {
+  return new ErrorPage({
+  });
 }

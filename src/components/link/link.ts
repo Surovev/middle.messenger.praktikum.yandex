@@ -3,13 +3,14 @@ import Block from '../../utils/Block';
 import template from './link.hbs';
 
 export class Link extends Block {
+  text: string;
   constructor(props: BlockProps) {
-    super('p', props);
+    super('a', props);
   }
 
   init(): void {
-    this.element?.classList.add('demo-routing__link');
-    this.element?.setAttribute('href', this.props.href as string);
+    this.element?.classList.add(this.props.className as string);
+    this.text = this.props.text as string;
   }
 
   render() {

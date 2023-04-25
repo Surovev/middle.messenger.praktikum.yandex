@@ -1,10 +1,11 @@
 
-            {{!-- <form class="profile__wrap" id="profileForm"> --}}
                 <div class="profile__avatar-wrapper">
-                    <img class="profile__avatar" src="http://placekitten.com/100/100" alt="аватар">
-                    <img class="profile__edit-avatar" src="/static/img/pencil.svg" alt="редактировать аватар">
+                    {{#if avatar}}
+                    <img class="profile__avatar" src={{avatar}} alt="аватар">
+                    {{/if}}
+                    {{{editAvatar}}}
                 </div>
-                <h6 class="profile__title">Name</h6>
+                <h6 class="profile__title">{{name}}</h6>
                 <div class="profile__info">
                     {{{inputEmail}}}
                     {{{inputLogin}}}
@@ -14,6 +15,7 @@
                     {{{inputPhone}}}
                 </div>
                 <div class="profile__links">
-                    {{!-- <button type="submit" class="btn btn__filling">Save</button> --}}
                     {{{submitButton}}}
                 </div>
+                {{{avatarPopup}}}
+                

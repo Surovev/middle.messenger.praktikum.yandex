@@ -1,0 +1,14 @@
+{{#each messages}}
+{{#if fromThisUser}}
+<div class="message-list__message message-list__message_is-your">
+    <p class="message-list__message-content message-list__message-content_is-your">{{content}}</p>
+    <span class="message-list__timestamp">{{time}}</span>
+</div>
+{{/if}}
+{{#unless fromThisUser}}
+<div class="message-list__message">
+    <p class="message-list__message-content">{{content}}</p>
+    <span class="message-list__timestamp">{{time}}</span>
+</div>
+{{/unless}}
+{{/each}}

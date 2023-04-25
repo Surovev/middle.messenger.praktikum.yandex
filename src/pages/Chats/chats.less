@@ -107,16 +107,33 @@
     padding: 0 20px 20px;
 
     &__message {
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+        line-height: 20px;
         width: 100%;
         min-height: 40px;
         padding: 10px;
         border-radius: 5px;
 
-        &_is-your {
-            text-align: end;
-            background-color: var(--light-grey);
-            color: var(--red);
+        &-content {
+            &_is-your {
+            margin-left: auto;
+            }
         }
+
+        &_is-your {
+            align-content: flex-end;
+            background-color: var(--light-grey);
+            color: var(--white);
+        }
+
+    }
+
+    &__timestamp {
+        font-size: 10px;
+        line-height: 20px;
+        margin-left: 10px;
     }
   
     &.is-empty {
@@ -134,7 +151,10 @@
     }
 
     &__main {
+        display: flex;
         flex-grow: 1;
+        overflow: scroll;
+        flex-direction: column-reverse;
     }
     
     &__header {
@@ -164,6 +184,10 @@
     }
 
     &__more {
+        &.btn {
+            width: 70px;
+        }
+
         &:hover {
             cursor: pointer;
         }

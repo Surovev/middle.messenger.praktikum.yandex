@@ -4,14 +4,29 @@ import Block from '../../utils/Block';
 import template from './EditProfileForm.hbs';
 import validator from '../../utils/Validate';
 import { BlockProps } from '../../typings/types';
+import { Img } from '../../components/img/img';
+import userController from '../../utils/controllers/userController';
+import { СhangeAvatarPopup } from '../../components/changeAvatarPopup/changeAvatarPopup';
 
 export class EditProfileForm extends Block {
+  popupClass: string;
   constructor(props: BlockProps) {
     super('form', props);
     this.element?.classList.add('profile__wrap');
   }
 
   protected init(): void {
+    this.children.editAvatar = new Img({
+      className: 'profile__edit-avatar',
+      src: 'https://cdn-icons-png.flaticon.com/512/61/61456.png',
+      alt: 'редактировать аватар',
+      events: {
+        click: () => {
+          this.children.avatarPopup?.show();
+        },
+      },
+    });
+
     this.children.inputEmail = new RowInput({
       placeholder: 'email',
       name: 'email',
@@ -118,6 +133,24 @@ export class EditProfileForm extends Block {
         },
       },
     });
+
+    this.children.avatarPopup = new СhangeAvatarPopup({
+      className: 'popup',
+      closePopup: () => { this.children.avatarPopup?.hide(); },
+      events: {
+        submit: (event) => {
+          event.preventDefault();
+          const formData = new FormData(event.target as HTMLFormElement);
+          if ((Object.fromEntries(formData).avatar as File)!.name) {
+            userController.changeAvatar(formData);
+            this.props.className = 'popup_is-hidden';
+            this.children.avatarPopup?.hide();
+          }
+        },
+      },
+    });
+
+    this.children.avatarPopup?.hide();
   }
 
   render() {

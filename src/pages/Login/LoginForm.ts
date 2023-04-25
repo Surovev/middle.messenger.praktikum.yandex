@@ -1,8 +1,10 @@
 import { Button } from '../../components/button/button';
 import { InputBlock } from '../../components/inputBlock/inputBlock';
+import { Link } from '../../components/link/link';
 import { BlockProps } from '../../typings/types';
 import Block from '../../utils/Block';
 import validator from '../../utils/Validate';
+import router from '../../utils/router/router';
 import template from './LoginForm.hbs';
 
 export class LoginForm extends Block {
@@ -44,6 +46,15 @@ export class LoginForm extends Block {
 
       },
     });
+    this.children.redirectLink = new Link({
+      className: 'form__link',
+      text: 'Есть аккаунт?',
+      events: {
+        click: () => {
+          router.go('/sing-up');
+        },
+      },
+    });
 
     this.children.submitButton = new Button({
       className: 'btn__filling',
@@ -52,7 +63,6 @@ export class LoginForm extends Block {
       events: {
         submit: (event: Event) => {
           event.preventDefault();
-          console.log(event);
         },
       },
     });

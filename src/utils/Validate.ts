@@ -6,6 +6,7 @@ class FormValidator {
     first_name: /^[A-ZА-Я][a-zа-я-]+$/,
     second_name: /^[A-ZА-Я][a-zа-я]+$/,
     password: /^(?=.*[A-Z])(?=.*[0-9])[A-Za-z0-9]{8,40}$/,
+    newPassword: /^(?=.*[A-Z])(?=.*[0-9])[A-Za-z0-9]{8,40}$/,
     email: /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/,
     login: /^(?![0-9]+$)[A-Za-z0-9-_]{3,20}$/,
     phone: /^\+?\d{10,15}$/,
@@ -14,6 +15,7 @@ class FormValidator {
     first_name: 'Без пробелов, цифр и спецсимволов(кроме дефиса), первая буква должна быть заглавной',
     second_name: 'Без пробелов, цифр и спецсимволов(кроме дефиса), первая буква должна быть заглавной',
     password: 'От 8 до 40 символов, обязательно хотя бы одна заглавная буква и цифра.',
+    newPassword: 'От 8 до 40 символов, обязательно хотя бы одна заглавная буква и цифра.',
     password_repeated: 'Пароли не совпадают',
     phone: 'Некорректный номер телефона',
     email: 'Некорректный email',
@@ -29,7 +31,7 @@ class FormValidator {
     }
     let valid: boolean;
     if (key === 'password_repeated') {
-      const firstPassword = field.form!.elements.namedItem('password') as HTMLInputElement;
+      const firstPassword = field.form!.elements.namedItem('newPassword') as HTMLInputElement;
       valid = firstPassword.value === field.value;
     } else {
       const regex = this._validationRegex[key as keyof inputNames] || this._validationRegex.password;

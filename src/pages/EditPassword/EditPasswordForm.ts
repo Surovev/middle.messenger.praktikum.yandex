@@ -15,7 +15,7 @@ export class EditPasswordForm extends Block {
   protected init(): void {
     this.children.olpPasswordInput = new RowInput({
       placeholder: 'insert your password',
-      name: 'old_password',
+      name: 'oldPassword',
       title: 'Old Password',
       type: 'password',
       events: {
@@ -29,7 +29,7 @@ export class EditPasswordForm extends Block {
     });
     this.children.newPasswordInput = new RowInput({
       placeholder: 'insert new password',
-      name: 'password',
+      name: 'newPassword',
       title: 'New Password',
       type: 'password',
       events: {
