@@ -6,7 +6,7 @@ import { СhangeAvatarPopup } from '../../components/changeAvatarPopup/changeAva
 import ChatCards from '../../components/chatCards/chatCards';
 import MessageList from '../../components/messageList/messageList';
 import { Link } from '../../components/link/link';
-import RemoveUserPopup from '../../components/removeUserPopup /removeUserPopup';
+import RemoveUserPopup from '../../components/removeUserPopup/removeUserPopup';
 import { BlockProps } from '../../typings/types';
 import Block from '../../utils/Block';
 import validator from '../../utils/Validate';

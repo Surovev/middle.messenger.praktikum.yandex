@@ -1,7 +1,9 @@
+import { Button } from '../../components/button/button';
 import { BlockProps } from '../../typings/types';
 import Block from '../../utils/Block';
 import validator from '../../utils/Validate';
 import userController from '../../utils/controllers/userController';
+import router from '../../utils/router/router';
 import store from '../../utils/store';
 import { EditPasswordForm } from './EditPasswordForm';
 import template from './EditPasswordPage.hbs';
@@ -15,6 +17,16 @@ export class EditPasswordPage extends Block {
   }
 
   protected init(): void {
+    this.children.redirectLink = new Button({
+      className: 'profile__redirect-btn',
+      text: '<',
+      events: {
+        click: () => {
+          router.go('/profile');
+        },
+      },
+    });
+
     this.children.form = new EditPasswordForm({
       avatar: user.avatar ? user.avatar : 'http://placekitten.com/100/100',
       events: {

@@ -12,6 +12,9 @@ export default class Input extends Block {
     this.element?.setAttribute('placeholder', this.props.placeholder as string);
     this.element?.setAttribute('type', this.props.type as string);
     this.element?.setAttribute('name', this.props.name as string);
+    if (this.props.value) {
+      this.element?.setAttribute('value', this.props.value as string);
+    }
   }
 
   render() {

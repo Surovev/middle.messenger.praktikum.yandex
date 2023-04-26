@@ -231,18 +231,6 @@ class Block {
       }
     });
 
-    // Object.entries(this.children).forEach(([_, component]) => {
-    //   const stub = temp.content.querySelector(`[data-id="${component.id}"]`);
-
-    //   if (!stub) {
-    //     return;
-    //   }
-
-    //   component.getContent()?.append(...Array.from(stub.childNodes));
-
-    //   stub.replaceWith(component.getContent()!);
-    // });
-
     return temp.content;
   }
 

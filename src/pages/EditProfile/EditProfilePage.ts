@@ -6,6 +6,8 @@ import userController from '../../utils/controllers/userController';
 import store from '../../utils/store';
 import { BlockProps } from '../../typings/types';
 import { IMG_URL } from '../../utils/consts/consts';
+import { Button } from '../../components/button/button';
+import router from '../../utils/router/router';
 
 // eslint-disable-next-line prefer-destructuring
 const user = store.getState().user;
@@ -18,6 +20,16 @@ export class EditProfilePage extends Block {
   }
 
   protected init(): void {
+    this.children.redirectLink = new Button({
+      className: 'profile__redirect-btn',
+      text: '<',
+      events: {
+        click: () => {
+          router.go('/profile');
+        },
+      },
+    });
+
     this.children.form = new EditProfileForm({
       avatar: `${IMG_URL}${user.avatar}`,
       name: user.display_name,
