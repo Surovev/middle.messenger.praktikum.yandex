@@ -8,14 +8,16 @@ import { Img } from '../../components/img/img';
 import userController from '../../utils/controllers/userController';
 import { СhangeAvatarPopup } from '../../components/changeAvatarPopup/changeAvatarPopup';
 import store from '../../utils/store';
+import { withAvatarAndName } from '../../utils/store/connect';
 
 const { user } = store.getState();
 
-export class EditProfileForm extends Block {
+class EditProfileForm extends Block {
   popupClass: string;
   constructor(props: BlockProps) {
     super('form', props);
     this.element?.classList.add('profile__wrap');
+    this.props.avatar = user.avatar;
   }
 
   protected init(): void {
@@ -166,3 +168,5 @@ export class EditProfileForm extends Block {
     return this.compile(template, this.props);
   }
 }
+
+export default withAvatarAndName(EditProfileForm);

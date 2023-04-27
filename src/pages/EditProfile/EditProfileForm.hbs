@@ -1,7 +1,7 @@
 
                 <div class="profile__avatar-wrapper">
-                    {{#if avatar}}
-                    <img class="profile__avatar" src={{avatar}} alt="аватар">
+                    {{#if avatarURL}}
+                    <img class="profile__avatar" src="https://ya-praktikum.tech/api/v2/resources/{{avatarURL}}" alt="аватар">
                     {{/if}}
                     {{{editAvatar}}}
                 </div>
