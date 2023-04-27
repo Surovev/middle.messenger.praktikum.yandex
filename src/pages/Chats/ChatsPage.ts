@@ -186,7 +186,7 @@ const Messages = new MessageList({
 export class ChatsPage extends Block {
   chats: any;
   constructor(props: BlockProps) {
-    super('main', props);
+    super('div', props);
   }
 
   render() {

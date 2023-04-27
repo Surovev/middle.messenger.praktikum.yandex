@@ -7,7 +7,7 @@ import authController from '../../utils/controllers/authController';
 
 export class LoginPage extends Block {
   constructor(props: BlockProps) {
-    super('main', props);
+    super('div', props);
   }
 
   protected init(): void {

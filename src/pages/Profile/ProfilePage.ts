@@ -12,7 +12,7 @@ const user = store.getState().user;
 
 export class ProfilePage extends Block {
   constructor(props: BlockProps) {
-    super('main', props);
+    super('div', props);
   }
   protected init(): void {
     this.children.redirectLink = new Button({

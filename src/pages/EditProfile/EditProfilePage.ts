@@ -35,7 +35,7 @@ const RedirectLink = new Button({
 
 export class EditProfilePage extends Block {
   constructor(props: BlockProps) {
-    super('main', props);
+    super('div', props);
   }
 
   protected init(): void {

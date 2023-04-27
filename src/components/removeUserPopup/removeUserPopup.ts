@@ -8,7 +8,6 @@ class RemoveUserPopup extends Block {
   className: unknown;
   constructor(props: BlockProps) {
     super('form', props);
-    console.log(this.props.searchResults);
   }
 
   protected init(): void {
