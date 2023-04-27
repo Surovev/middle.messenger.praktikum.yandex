@@ -14,5 +14,5 @@
 - `npm run build` — сборка "стабильной" версии.
 
 
-Ссылка на деплой: https://6422f2423ab4dc0008cff25e--iridescent-brigadeiros-98c840.netlify.app/ 
+Ссылка на деплой: https://644a556e4a8caf0008970cbe--iridescent-brigadeiros-98c840.netlify.app/
 
