@@ -12,6 +12,18 @@ class AddUserPopup extends Block {
 
   protected init(): void {
     this.element?.classList.add(this.props.className as string);
+
+    this.children.closeButton = new Button({
+      text: 'X',
+      type: 'button',
+      className: 'add-user-form__close-button',
+      events: {
+        click: () => {
+          (this.props.closePopup as () => void)();
+        },
+      },
+    });
+
     this.children.submitButton = new Button({
       text: 'Search',
       type: 'submit',

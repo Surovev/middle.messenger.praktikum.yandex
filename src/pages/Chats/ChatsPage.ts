@@ -23,6 +23,7 @@ import { IMG_URL } from '../../utils/consts/consts';
 const addUserPopup = new AddUserPopup({
   className: 'add-user-form',
   searchResults: [],
+  closePopup: () => { closeMenu(addUserPopup as Block); },
   events: {
     submit: (e) => {
       e.preventDefault();
@@ -51,13 +52,11 @@ addUserPopup.hide();
 const removeUserPopup = new RemoveUserPopup({
   searchResults: [],
   className: 'add-user-form',
+  closePopup: () => { closeMenu(removeUserPopup as Block); },
   events: {
     click: (e) => {
       const target = e.target as HTMLElement;
-      if (target === e.currentTarget) {
-        closeMenu(removeUserPopup as Block);
-        return;
-      }
+
       if (target.className === 'add-user-search-result') {
         const userId = target.dataset.uid;
         if (!userId) {
@@ -128,7 +127,10 @@ const addChatButton = new Button({
 const actionMenu = new ActionMenu({
   openAvatarPopup: () => { changeAvatarPopup?.show(); },
   openAddUserPopup: () => { addUserPopup!.show(); },
-  openRemoveUserPopup: () => { removeUserPopup!.show(); },
+  openRemoveUserPopup: () => {
+    chatsController.getChatUsers();
+    removeUserPopup!.show();
+  },
   closeActionMenu: () => { actionMenu?.hide(); },
 });
 
