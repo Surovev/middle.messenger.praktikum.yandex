@@ -26,7 +26,7 @@ export class ProfilePage extends Block {
     });
 
     this.children.profileInfo = new ProfileInfo({
-      avatar: user.avatar ? `${IMG_URL}${user.avatar}` : 'http://placekitten.com/100/100',
+      avatar: IMG_URL + user.avatar,
       displayName: user.display_name,
       email: user.email,
       login: user.login,
