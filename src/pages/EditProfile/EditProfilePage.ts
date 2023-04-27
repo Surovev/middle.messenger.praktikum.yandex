@@ -12,7 +12,7 @@ import router from '../../utils/router/router';
 const user = store.getState().user;
 
 const Form = new EditProfileForm({
-  name: user.display_name,
+  name: user.display_name ? user.display_name : 'Your Name',
   events: {
     submit: (event: Event) => {
       event.preventDefault();

@@ -17,7 +17,7 @@ class EditProfileForm extends Block {
   constructor(props: BlockProps) {
     super('form', props);
     this.element?.classList.add('profile__wrap');
-    this.props.avatar = user.avatar;
+    this.props.avatar = user.avatar ? user.avatar : '';
   }
 
   protected init(): void {
@@ -37,7 +37,7 @@ class EditProfileForm extends Block {
       name: 'email',
       title: 'Email',
       type: 'email',
-      value: user.email,
+      value: user.email ? user.email : '',
       events: {
         focusin: (event: Event) => {
           validator.validateField(event.target as HTMLInputElement);
@@ -54,7 +54,7 @@ class EditProfileForm extends Block {
       name: 'login',
       title: 'login',
       type: 'text',
-      value: user.login,
+      value: user.login ? user.login : '',
       events: {
         focusin: (event: Event) => {
           validator.validateField(event.target as HTMLInputElement);
@@ -71,7 +71,7 @@ class EditProfileForm extends Block {
       name: 'first_name',
       title: 'First Name',
       type: 'text',
-      value: user.first_name,
+      value: user.first_name ? user.first_name : '',
       events: {
         focusin: (event: Event) => {
           validator.validateField(event.target as HTMLInputElement);
@@ -88,7 +88,7 @@ class EditProfileForm extends Block {
       name: 'second_name',
       title: 'Last Name',
       type: 'text',
-      value: user.second_name,
+      value: user.second_name ? user.second_name : '',
       events: {
         focusin: (event: Event) => {
           validator.validateField(event.target as HTMLInputElement);
@@ -105,7 +105,7 @@ class EditProfileForm extends Block {
       name: 'display_name',
       title: 'Nick Name',
       type: 'text',
-      value: user.display_name,
+      value: user.display_name ? user.display_name : '',
       events: {
         focusin: (event: Event) => {
           validator.validateField(event.target as HTMLInputElement);
@@ -122,7 +122,7 @@ class EditProfileForm extends Block {
       name: 'phone',
       title: 'Phone',
       type: 'text',
-      value: user.phone,
+      value: user.phone ? user.phone : '',
       events: {
         focusin: (event: Event) => {
           validator.validateField(event.target as HTMLInputElement);
