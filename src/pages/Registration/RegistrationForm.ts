@@ -4,6 +4,8 @@ import Block from '../../utils/Block';
 import template from './RegistrationForm.hbs';
 import validator from '../../utils/Validate';
 import { BlockProps } from '../../typings/types';
+import { Link } from '../../components/link/link';
+import router from '../../utils/router/router';
 
 export class RegistrationForm extends Block {
   constructor(props: BlockProps) {
@@ -99,6 +101,16 @@ export class RegistrationForm extends Block {
         },
         focusout: (event: Event) => {
           validator.validateField(event.target as HTMLInputElement);
+        },
+      },
+    });
+
+    this.children.redirectLink = new Link({
+      className: 'form__link',
+      text: 'Sign in',
+      events: {
+        click: () => {
+          router.go('/');
         },
       },
     });

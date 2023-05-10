@@ -151,11 +151,56 @@ class Block {
     this._addEvents();
   }
 
-  protected compile(template: (context: any) => string, context: any) {
+  // protected compile(template: (context: any) => string, props?: BlockProps) {
+  //   if (typeof (props) === 'undefined') {
+  //     props = this.props;
+  //   }
+
+  //   Object.entries(this.children).forEach(([key, child]) => {
+  //     if (Array.isArray(child)) {
+  //           props![key] = `<div data-id="${child[0].id}"></div>`;
+  //     } else {
+  //           props![key] = `<div data-id="${child.id}"></div>`;
+  //     }
+  //   });
+
+  //   const fragment = <HTMLTemplateElement> this._createDocumentElement('template');
+  //   fragment.innerHTML = Handlebars.compile(template)(props);
+
+  //   Object.values(this.children).forEach((child) => {
+  //     if (Array.isArray(child)) {
+  //       const fr = <HTMLTemplateElement> this._createDocumentElement('template');
+  //       try {
+  //         child.forEach((cmp) => {
+  //           fr.content.appendChild(cmp.getContent());
+  //         });
+  //       } catch (e) {
+  //         console.log(e);
+  //       }
+
+  //       const stub = fragment.content.querySelector(`[data-id="${child[0]._id}"]`);
+  //       if (stub) {
+  //         stub.replaceWith(fr.content);
+  //       }
+  //     } else {
+  //       const stub = fragment.content.querySelector(`[data-id="${child.id}"]`);
+  //       if (stub) {
+  //         stub.replaceWith(child.getContent() as HTMLElement);
+  //       }
+  //     }
+  //   });
+  //   return fragment.content;
+  // }
+
+  protected compile(template: (context: any) => string, context?: any) {
     const contextAndStubs = { ...context };
 
     Object.entries(this.children).forEach(([name, component]) => {
-      contextAndStubs[name] = `<div data-id="${component.id}"></div>`;
+      if (Array.isArray(component)) {
+        contextAndStubs[name] = `<div data-id="${component[0].id}"></div>`;
+      } else {
+        contextAndStubs[name] = `<div data-id="${component.id}"></div>`;
+      }
     });
 
     const html = template(contextAndStubs);
@@ -163,17 +208,27 @@ class Block {
     const temp = document.createElement('template');
 
     temp.innerHTML = html;
+    Object.values(this.children).forEach((child) => {
+      if (Array.isArray(child)) {
+        const fr = <HTMLTemplateElement> this._createDocumentElement('template');
+        try {
+          child.forEach((cmp) => {
+            fr.content.appendChild(cmp.getContent());
+          });
+        } catch (e) {
+          console.log(e);
+        }
 
-    Object.entries(this.children).forEach(([_, component]) => {
-      const stub = temp.content.querySelector(`[data-id="${component.id}"]`);
-
-      if (!stub) {
-        return;
+        const stub = temp.content.querySelector(`[data-id="${child[0].id}"]`);
+        if (stub) {
+          stub.replaceWith(fr.content);
+        }
+      } else {
+        const stub = temp.content.querySelector(`[data-id="${child.id}"]`);
+        if (stub) {
+          stub.replaceWith(child.getContent() as HTMLElement);
+        }
       }
-
-      component.getContent()?.append(...Array.from(stub.childNodes));
-
-      stub.replaceWith(component.getContent()!);
     });
 
     return temp.content;

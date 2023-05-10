@@ -2,132 +2,36 @@
     <div class="chats">
       <div class="chats-feed">
         <div class="chats-feed__profile-link">
-          <a href="#">Profile &#8250;</a>
+          {{{redirectLink}}}
         </div>
         <div class="chats-feed__search">
           <input type="text" placeholder="Search">
         </div>
-        <div class="chats-feed__wrapper">
-          <div class="chat-card">
-            <img class="chat-card__avatar" src="http://placekitten.com/60/60" alt="аватар"/>
-            <div class="chat-card__main">
-              <h6 class="chat-card__name">Name</h6>
-              <p class="chat-card__message">Some message preview ergergeg rgdrgergergwrgfefewrfewrfewrfewrfee gregeg</p>
-            </div>
-            <div class="chat-card__info">
-              <p class="chat-card__info-time">10:12</p>
-              <p class="chat-card__info-unread">3</p>
-            </div>
-          </div>
-          <div class="chat-card">
-            <img class="chat-card__avatar" src="http://placekitten.com/60/60" alt="аватар"/>
-            <div class="chat-card__main">
-              <h6 class="chat-card__name">Name</h6>
-              <p class="chat-card__message">Some message preview ergergeg rgdrgergergwrgfefewrfewrfewrfewrfee gregeg</p>
-            </div>
-            <div class="chat-card__info">
-              <p class="chat-card__info-time">10:12</p>
-              <p class="chat-card__info-unread">3</p>
-            </div>
-          </div>
-          <div class="chat-card">
-            <img class="chat-card__avatar" src="http://placekitten.com/60/60" alt="аватар"/>
-            <div class="chat-card__main">
-              <h6 class="chat-card__name">Name</h6>
-              <p class="chat-card__message">Some message preview ergergeg rgdrgergergwrgfefewrfewrfewrfewrfee gregeg</p>
-            </div>
-            <div class="chat-card__info">
-              <p class="chat-card__info-time">10:12</p>
-              <p class="chat-card__info-unread">3</p>
-            </div>
-          </div>
-          <div class="chat-card">
-            <img class="chat-card__avatar" src="http://placekitten.com/60/60" alt="аватар"/>
-            <div class="chat-card__main">
-              <h6 class="chat-card__name">Name</h6>
-              <p class="chat-card__message">Some message preview ergergeg rgdrgergergwrgfefewrfewrfewrfewrfee gregeg</p>
-            </div>
-            <div class="chat-card__info">
-              <p class="chat-card__info-time">10:12</p>
-              <p class="chat-card__info-unread">3</p>
-            </div>
-          </div>
-          <div class="chat-card">
-            <img class="chat-card__avatar" src="http://placekitten.com/60/60" alt="аватар"/>
-            <div class="chat-card__main">
-              <h6 class="chat-card__name">Name</h6>
-              <p class="chat-card__message">Some message preview ergergeg rgdrgergergwrgfefewrfewrfewrfewrfee gregeg</p>
-            </div>
-            <div class="chat-card__info">
-              <p class="chat-card__info-time">10:12</p>
-              <p class="chat-card__info-unread">3</p>
-            </div>
-          </div>
-          <div class="chat-card">
-            <img class="chat-card__avatar" src="http://placekitten.com/60/60" alt="аватар"/>
-            <div class="chat-card__main">
-              <h6 class="chat-card__name">Name</h6>
-              <p class="chat-card__message">Some message rfewrfewrfewrfee gregeg</p>
-            </div>
-            <div class="chat-card__info">
-              <p class="chat-card__info-time">10:12</p>
-              <p class="chat-card__info-unread">3</p>
-            </div>
-          </div>
-          <div class="chat-card">
-            <img class="chat-card__avatar" src="http://placekitten.com/60/60" alt="аватар"/>
-            <div class="chat-card__main">
-              <h6 class="chat-card__name">Name</h6>
-              <p class="chat-card__message">Some message preview ergergeg rgdrgergergwrgfefewrfewrfewrfewrfee gregeg</p>
-            </div>
-            <div class="chat-card__info">
-              <p class="chat-card__info-time">10:12</p>
-              <p class="chat-card__info-unread">3</p>
-            </div>
-          </div>
-          <div class="chat-card">
-            <img class="chat-card__avatar" src="http://placekitten.com/60/60" alt="аватар"/>
-            <div class="chat-card__main">
-              <h6 class="chat-card__name">Name</h6>
-              <p class="chat-card__message">Some message previewwrfee gregeg</p>
-            </div>
-            <div class="chat-card__info">
-              <p class="chat-card__info-time">10:12</p>
-              <p class="chat-card__info-unread">3</p>
-            </div>
-          </div>
-          <div class="chat-card">
-            <img class="chat-card__avatar" src="http://placekitten.com/60/60" alt="аватар"/>
-            <div class="chat-card__main">
-              <h6 class="chat-card__name">Name</h6>
-              <p class="chat-card__message">getg</p>
-            </div>
-            <div class="chat-card__info">
-              <p class="chat-card__info-time">10:12</p>
-            </div>
-          </div>
-              
-
-
-        </div>
+        {{{chatCards}}}
+        {{{addChatBtn}}}
       </div>
-      <div class="message-list">
-        {{!-- <h6 class="message-list__empty-title">please select a chat</h6> --}}
-        <div class="message-list__header">
-          <div class="message-list__profile">
-            <img class="message-list__profile-avatar" src="http://placekitten.com/60/60" alt="avatar">
-            <h6 class="message-list__profile-name">Name</h6>
+      {{#if currentChat}}
+        <div class="message-list">
+          <div class="message-list__header">
+            <div class="message-list__profile">
+              <img class="message-list__profile-avatar" src={{avatar}} alt="avatar">
+              <h6 class="message-list__profile-name">{{name}}</h6>
+            </div>
+            {{{moreButton}}}
+            {{{actionMenu}}}
           </div>
-          <div class="message-list__more">&#38;</div>
+          {{{messageList}}}
+          {{{form}}}
         </div>
-        <div class="message-list__main">
-          <div class="message-list__message">dwcd</div>
-          <div class="message-list__message">dwcd</div>
-          <div class="message-list__message">dwcd</div>
-          <div class="message-list__message message-list__message_is-your">dwcd</div>
-          <div class="message-list__message">dwcd</div>
+      {{/if}}
+      {{#unless currentChat}}
+        <div class="message-list is-empty">
+          <h5>Выберите чат из списка или создайте новый</h5>
         </div>
-        {{{form}}}
-      </div>
+      {{/unless}}
+      {{{changeChatAvatar}}}
+      {{{addChatPopup}}}
+      {{{addUserPopup}}}
+      {{{removeUserPopup}}}
     </div>
  

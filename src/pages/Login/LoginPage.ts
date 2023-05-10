@@ -3,10 +3,11 @@ import template from './LoginPage.hbs';
 import validator from '../../utils/Validate';
 import { LoginForm } from './LoginForm';
 import { BlockProps } from '../../typings/types';
+import authController from '../../utils/controllers/authController';
 
 export class LoginPage extends Block {
   constructor(props: BlockProps) {
-    super('main', props);
+    super('div', props);
   }
 
   protected init(): void {
@@ -14,7 +15,9 @@ export class LoginPage extends Block {
       events: {
         submit: (event: Event) => {
           event.preventDefault();
-          validator.validateSubmit(event);
+          if (validator.validateSubmit(event)) {
+            authController.signIn(event);
+          }
         },
       },
     });
@@ -23,4 +26,9 @@ export class LoginPage extends Block {
   render() {
     return this.compile(template, this.props);
   }
+}
+
+export default function createLoginPage(): Block {
+  return new LoginPage({
+  });
 }

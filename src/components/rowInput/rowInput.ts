@@ -17,6 +17,7 @@ export class RowInput extends Block {
       placeholder: this.props.placeholder,
       type: this.props.type,
       events: this.props.events,
+      value: this.props.value,
     });
   }
 

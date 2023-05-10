@@ -1,0 +1,17 @@
+{{#each chats}}
+<div class="chat-card" data-chatid="{{id}}" data-chattitle="{{title}}">
+    <img class="chat-card__avatar" src="https://ya-praktikum.tech/api/v2/resources/{{avatar}}" alt="аватар"/>
+    <div class="chat-card__main">
+        <h6 class="chat-card__name">{{title}}</h6>
+        <p class="chat-card__message">{{last_message.content}}</p>
+    </div>
+    <div class="chat-card__info">
+        {{#if timeSamp}}
+            <p class="chat-card__info-time">{{timeSamp}}</p>
+        {{/if}}
+        {{#if unread_count}}
+            <p class="chat-card__info-unread">{{unread_count}}</p>
+        {{/if}}
+    </div>
+</div>
+{{/each}}
