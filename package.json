@@ -40,7 +40,7 @@
     "build": "parcel build ./index.html --no-cache",
     "lint": "npx eslint . --ext .ts ",
     "lint-style": "npx stylelint \"**/*.less\" --fix",
-    "test": "mocha --require ts-node/register --require mochaSetup.js src/**/*.spec.ts",
+    "test": "mocha --require ts-node/register --require mochaSetup.js src/**/**.spec.ts",
     "fix": "npx eslint . --ext .ts --fix"
   },
   "directories": {
