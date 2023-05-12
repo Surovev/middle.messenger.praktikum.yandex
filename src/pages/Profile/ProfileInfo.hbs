@@ -1,6 +1,8 @@
 
             <div class="profile__avatar-wrapper">
-                <img class="profile__avatar" src={{avatar}}  alt="Avatar">
+                {{#if avatar}}
+                  <img class="profile__avatar" src={{avatar}}>
+                {{/if}}
             </div>
             <div class="profile__title">{{firstName}}</div>
             <div class="profile__info">

@@ -10,6 +10,12 @@ global.HTMLElement = class {
   innerHtml = "";
 };
 
+require.extensions['.hbs'] = function (module, filename) {
+  const contents = fs.readFileSync(filename, 'utf-8');
+
+  module.exports = Handlebars.compile(contents);
+}
+
 global.XMLHttpRequest = class {
   status = 200;
   onload = () => null;

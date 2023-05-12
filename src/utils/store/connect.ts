@@ -1,7 +1,5 @@
 import store, { StoreEvents } from '.';
 import { BlockProps, Indexed } from '../../typings/types';
-
-import Block from '../Block';
 import isEqual from '../helpers/isEqual';
 
 function connect(mapStateToProps: (state: Indexed, origProps: BlockProps) => Indexed) {
