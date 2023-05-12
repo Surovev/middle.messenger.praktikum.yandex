@@ -160,6 +160,7 @@ const moreButton = new Button({
   text: 'more >',
   events: {
     click: () => {
+      console.log(router.getRoute('/messenger'));
       actionMenu?.show();
     },
   },

@@ -13,7 +13,7 @@ class Store extends EventBus {
 
   constructor() {
     super();
-    const savedState = localStorage.getItem(Store.STORE_NAME);
+    const savedState = window.localStorage.getItem(Store.STORE_NAME);
     try {
       this._state = savedState ? (JSON.parse(savedState) ?? {}) : {};
     } catch (e) {
@@ -21,7 +21,7 @@ class Store extends EventBus {
     }
     this.on(
       Store.EVENT_UPDATE,
-      () => { localStorage.setItem(Store.STORE_NAME, JSON.stringify(this._state)); },
+      () => { window.localStorage.setItem(Store.STORE_NAME, JSON.stringify(this._state)); },
     );
   }
 

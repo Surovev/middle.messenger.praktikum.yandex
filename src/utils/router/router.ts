@@ -2,6 +2,10 @@ import Block from '../Block';
 import store from '../store';
 import Route from './route';
 
+export interface BlockConstructable<P = any> {
+  new(props: P): Block;
+}
+
 class Router {
   private _routes: Array<Route>;
   private _history: History;
