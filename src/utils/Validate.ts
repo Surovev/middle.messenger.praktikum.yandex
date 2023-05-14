@@ -35,7 +35,7 @@ class FormValidator {
       valid = firstPassword.value === field.value;
     } else {
       const regex = this._validationRegex[key as keyof inputNames] || this._validationRegex.password;
-      valid = regex ? regex.test(field.value) : false;
+      valid = regex as RegExp ? (regex as RegExp).test(field.value) : false;
     }
 
     if (valid) {

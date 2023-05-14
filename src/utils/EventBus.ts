@@ -1,5 +1,5 @@
 class EventBus {
-  private listeners: Record<string, Function[]> = {};
+  listeners: Record<string, Function[]> = {};
 
   public on(event: string, callback: Function) {
     if (!this.listeners[event]) {

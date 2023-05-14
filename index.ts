@@ -8,6 +8,7 @@ import createRegistrationPage from './src/pages/Registration/RegistrationPage';
 import createChatsPage from './src/pages/Chats/ChatsPage';
 import store from './src/utils/store';
 import Block from './src/utils/Block';
+import './src/layout/main/index.less';
 
 router
   .use('/', createLoginPage)
