@@ -1,22 +1,21 @@
-import Router from './router'
+/* eslint-disable no-undef */
 import { expect } from 'chai';
 import sinon from 'sinon';
+import Router from './router';
 
-import Block from "../Block"
-
+import Block from '../Block';
 
 describe('Router', () => {
-
   global.window.history.back = () => {
     if (typeof window.onpopstate === 'function') {
-      window.onpopstate({currentTarget: window} as unknown as PopStateEvent);
+      window.onpopstate({ currentTarget: window } as unknown as PopStateEvent);
     }
   };
   global.window.history.forward = () => {
     if (typeof window.onpopstate === 'function') {
-      window.onpopstate({currentTarget: window} as unknown as PopStateEvent);
+      window.onpopstate({ currentTarget: window } as unknown as PopStateEvent);
     }
-  }
+  };
 
   const getContentFake = sinon.fake.returns(document.createElement('div'));
 
@@ -31,8 +30,8 @@ describe('Router', () => {
   });
 
   it('Переход на новую страницу должен менять состояние сущности history', () => {
-    window.history.pushState({page: 'login'}, 'Login', '/login');
-    window.history.pushState({page: 'register'}, 'Register', '/register');
+    window.history.pushState({ page: 'login' }, 'Login', '/login');
+    window.history.pushState({ page: 'register' }, 'Register', '/register');
 
     expect(window.history.length).to.eq(3);
   });
