@@ -14,5 +14,5 @@
 - `npm run build` — сборка "стабильной" версии.
 
 
-Ссылка на деплой: https://644a556e4a8caf0008970cbe--iridescent-brigadeiros-98c840.netlify.app/
+Ссылка на деплой: https://surovev-messenger-25ua.onrender.com/
 
