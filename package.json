@@ -54,7 +54,8 @@
     "lint": "npx eslint . --ext .ts ",
     "lint-style": "npx stylelint \"**/*.less\" --fix",
     "test": "mocha --require ts-node/register --require mochaSetup.js src/**/**.spec.ts",
-    "fix": "npx eslint . --ext .ts --fix"
+    "fix": "npx eslint . --ext .ts --fix",
+    "prepare": "husky install"
   },
   "directories": {
     "src": "./src",
@@ -65,12 +66,6 @@
     "handlebars-loader": "^1.7.3",
     "nanoid": "^4.0.0",
     "node": "^19.6.0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run test",
-      "pre-push": "npm run test"
-    }
   },
   "keywords": [],
   "author": "",
